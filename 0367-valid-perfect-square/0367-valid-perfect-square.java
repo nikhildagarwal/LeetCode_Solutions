@@ -1,0 +1,32 @@
+class Solution {
+    public boolean isPerfectSquare(int num) {
+        int x = num;
+        if(x>2147395600){
+            return false;
+        }else if(x==2147395600){
+            return true;
+        }else{
+            int signal = -1;
+        int counter1 = 0;
+        int counter2 = 1;
+        int result = -1;
+        while(signal<0){
+            int a = counter1*counter1;
+            int b = counter2*counter2;
+            if(a<=x && x<b){
+                result = counter1;
+                signal = 1;
+            }
+            counter1++;
+            counter2++;
+        }
+
+        result = result * result;
+        if(result == x){
+            return true;
+        }else{
+            return false;
+        }
+        }
+    }
+}
