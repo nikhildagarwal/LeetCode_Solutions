@@ -15,7 +15,6 @@ public:
             }
         }
         string firstWord = strs[index];
-        cout<<firstWord;
         int lengthFirstWord = firstWord.size();
         for(int i = 0;i<lengthFirstWord;i++){
             char currChar = firstWord.at(i);
