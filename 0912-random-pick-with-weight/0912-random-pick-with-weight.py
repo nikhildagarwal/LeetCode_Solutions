@@ -18,7 +18,7 @@ class Solution(object):
         """
         :rtype: int
         """
-        return np.random.choice(self.na, p = self.weights, replace=True)
+        return np.random.choice(self.na, p = self.weights, replace = True)
         
 
 
