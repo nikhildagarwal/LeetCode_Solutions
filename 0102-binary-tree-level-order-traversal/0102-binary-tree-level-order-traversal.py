@@ -1,4 +1,3 @@
-import queue
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -7,13 +6,12 @@ import queue
 #         self.right = right
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        q = queue.Queue()
-        q.put([root,0])
+        queue = [[root,0]]
         ml = []
         curr_row = []
         lvl = 0
-        while not q.empty():
-            n = q.get()
+        while queue:
+            n = queue.pop(0)
             curr_lvl = n[1]
             curr_node = n[0]
             if curr_node is not None:
@@ -23,8 +21,8 @@ class Solution:
                     lvl += 1
                     ml.append(curr_row)
                     curr_row = [curr_node.val]
-                q.put([curr_node.left,curr_lvl+1])
-                q.put([curr_node.right,curr_lvl+1])
+                queue.append([curr_node.left,curr_lvl+1])
+                queue.append([curr_node.right,curr_lvl+1])
         if curr_row:
             ml.append(curr_row)
         return ml
