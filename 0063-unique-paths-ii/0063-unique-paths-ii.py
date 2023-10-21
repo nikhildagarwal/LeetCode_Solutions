@@ -21,17 +21,12 @@ class Solution:
         start = Node((0,0),1,None)
         holder = {(0,0):start}
         queue = [start]
-        for node in queue:
-            print(node)
-        print("")
         collisions = 0
         while queue:
             curr = queue.pop(0)
             i = curr.loc[0]
             j = curr.loc[1]
             if i == gr and j == gc:
-                for key in holder:
-                    print(holder[key])
                 return curr.c
             if self.onboard(i+1,j,rows,cols):
                 if obstacleGrid[i+1][j] != 1:
@@ -51,7 +46,4 @@ class Solution:
                         new_node = Node(tup,curr.c,curr)
                         queue.append(new_node)
                         holder[tup] = new_node
-            for node in queue:
-                print(node)
-            print("")
         return 0
