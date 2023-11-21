@@ -9,3 +9,4 @@ class Solution:
         if memory_arr[-1] == float('inf'):
             return -1
         return memory_arr[-1]
+
